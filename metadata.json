@@ -14,7 +14,8 @@
 		"Id": "com.aeonoi.swaync-client",
 		"Icon": "notifications",
 		"Version": "1.0",
-		"License": "MIT"
+		"License": "MIT",
+		"X-Plasma-MainScript": "nop"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0"
 }

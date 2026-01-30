@@ -16,13 +16,14 @@ PlasmoidItem {
     Platform.SystemTrayIcon {
         id: trayIcon
         visible: true
-        icon.name: dndEnabled ? "notifications-disabled" : "indicator-messages"
-        tooltip: "DND: " + dndEnabled // For debugging
+        icon.name: dndEnabled ? "notifications-disabled" : "notifications"
+        // tooltip: "ZZZZ"
+        // category: Platform.SystemTrayIcon.SystemServices
 
         onActivated: {
             if (reason === Platform.SystemTrayIcon.Trigger) { // Left click
                 executable.exec("swaync-client -t")
-            } else if (reason === Platform.SystemTrayIcon.MiddleClick) { // Middle click
+            } else if (reason === Platform.SystemTrayIcon.MiddleClick || reason === Platform.SystemTrayIcon.RightClick) { // Middle click
                 dndToggler.exec("swaync-client -d")
             }
         }
